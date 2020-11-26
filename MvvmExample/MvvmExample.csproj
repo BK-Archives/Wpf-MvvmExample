@@ -95,6 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MvvmExample.DataAccess\MvvmExample.DataAccess.csproj">
+      <Project>{92BFFF07-A2F0-438F-88A8-EF0F1C3066FB}</Project>
+      <Name>MvvmExample.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MvvmExample.Logic\MvvmExample.Logic.csproj">
       <Project>{5e2b65cb-cdec-4c14-aa3b-6e2caeb87c80}</Project>
       <Name>MvvmExample.Logic</Name>

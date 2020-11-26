@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MvvmExample.Logic;
+using MvvmExample.Logic.ViewModels;
 
 namespace MvvmExample
 {
@@ -24,7 +25,6 @@ namespace MvvmExample
 		public MainWindow()
 		{
 			InitializeComponent();
-			DataContext = new MainWindowViewModel();
 		}
 
 	}

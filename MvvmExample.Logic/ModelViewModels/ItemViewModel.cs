@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using MvvmExample.DataAccess.Models;
+using MvvmExample.Logic.ViewModels;
 
 namespace MvvmExample.Logic.ModelViewModels
 {

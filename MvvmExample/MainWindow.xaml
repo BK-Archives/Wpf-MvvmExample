@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MvvmExample"
         xmlns:logic="clr-namespace:MvvmExample.Logic;assembly=MvvmExample.Logic"
+        xmlns:viewModels="clr-namespace:MvvmExample.Logic.ViewModels;assembly=MvvmExample.Logic"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        d:DataContext="{d:DesignInstance logic:MainWindowViewModel}">
+        d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}">
     
    
     <Grid>

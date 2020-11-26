@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Windows.Input;
 using MvvmExample.DataAccess;
-using MvvmExample.DataAccess.Models;
 using MvvmExample.Logic.ModelViewModels;
 
-namespace MvvmExample.Logic
+namespace MvvmExample.Logic.ViewModels
 {
 	public class MainWindowViewModel : ViewModelBase
 	{
@@ -16,9 +12,9 @@ namespace MvvmExample.Logic
 
 		private readonly ItemRepository _itemRepository;
 
-		public MainWindowViewModel() 
+		public MainWindowViewModel(ItemRepository itemRepository)
 		{
-			_itemRepository = new ItemRepository(); // you would normally use DI
+			_itemRepository = itemRepository;
 
 			Title = "This is a title";
 

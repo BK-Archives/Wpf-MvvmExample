@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
-namespace MvvmExample.Logic
+namespace MvvmExample.Logic.ViewModels
 {
 	public class ViewModelBase : INotifyPropertyChanged
 	{

@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
+using MvvmExample.DataAccess;
 using MvvmExample.Logic;
+using MvvmExample.Logic.ViewModels;
 
 namespace MvvmExample
 {
@@ -18,7 +22,8 @@ namespace MvvmExample
 		{
 			base.OnStartup(e);
 
-			var mainWindowViewModel = new MainWindowViewModel();
+			var itemRepository = new ItemRepository();
+			var mainWindowViewModel = new MainWindowViewModel(itemRepository);
 			var mainWindow = new MainWindow();
 			mainWindow.DataContext = mainWindowViewModel;
 
