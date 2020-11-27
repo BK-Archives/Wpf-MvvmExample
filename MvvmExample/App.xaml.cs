@@ -23,7 +23,9 @@ namespace MvvmExample
 			base.OnStartup(e);
 
 			var itemRepository = new ItemRepository();
-			var mainWindowViewModel = new MainWindowViewModel(itemRepository);
+			var userInteraction = new UserInteraction.UserInteraction();
+			var mainWindowViewModel = new MainWindowViewModel(itemRepository, userInteraction);
+
 			var mainWindow = new MainWindow();
 			mainWindow.DataContext = mainWindowViewModel;
 

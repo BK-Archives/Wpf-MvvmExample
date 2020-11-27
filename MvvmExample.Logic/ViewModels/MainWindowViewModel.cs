@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Input;
 using MvvmExample.DataAccess;
 using MvvmExample.Logic.ModelViewModels;
+using MvvmExample.Logic.UserInteraction;
 
 namespace MvvmExample.Logic.ViewModels
 {
@@ -11,10 +12,12 @@ namespace MvvmExample.Logic.ViewModels
 		private string _title;
 
 		private readonly ItemRepository _itemRepository;
+		private readonly IUserInteraction _userInteraction;
 
-		public MainWindowViewModel(ItemRepository itemRepository)
+		public MainWindowViewModel(ItemRepository itemRepository, IUserInteraction userInteraction)
 		{
 			_itemRepository = itemRepository;
+			_userInteraction = userInteraction;
 
 			Title = "This is a title";
 
@@ -27,7 +30,14 @@ namespace MvvmExample.Logic.ViewModels
 					Items.Add(itemViewModel);
 			});
 
-			ClearItemsCommand = new RelayCommand(_ => Items.Clear());
+			ClearItemsCommand = new RelayCommand(_ =>
+			{
+				const string title = "Items will be deleted";
+				const string prompt = "Are you shure that you want to delete the item?";
+				var result = _userInteraction.DisplayAlert(title, prompt);
+				if (result == UserInteractionResult.OK || result == UserInteractionResult.Yes)
+					Items.Clear();
+			});
 		}
 
 		public ObservableCollection<ItemViewModel> Items { get; private set; } = new ObservableCollection<ItemViewModel>();
